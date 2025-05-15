@@ -1,0 +1,43 @@
+[
+  {
+    "date": "01-01",
+    "name": "Global Family Day",
+    "description": "A day proclaimed by the United Nations to be celebrated every year on 1 January. The day is meant to reflect on the importance of families and their well-being.",
+    "funFact": "It grew out of the celebration of the 'One Day of Peace' observed in various countries since the mid-1990s.",
+    "media": "global-family-day.jpg",
+    "tags": ["international", "peace", "family"]
+  },
+  {
+    "date": "03-14",
+    "name": "Pi Day",
+    "description": "An annual celebration of the mathematical constant π (pi). Pi Day is observed on March 14 (3/14 in the month/day date format), since 3, 1, and 4 are the first three significant digits of π.",
+    "funFact": "In 2009, the U.S. House of Representatives passed a non-binding resolution recognizing March 14 as National Pi Day.",
+    "media": "pi-day.png",
+    "tags": ["science", "mathematics", "fun"]
+  },
+  {
+    "date": "05-04",
+    "name": "Star Wars Day",
+    "description": "An informal commemorative day observed annually on May 4 to celebrate the Star Wars media franchise. The date is a pun on the Star Wars catchphrase 'May the Force be with you' as 'May the Fourth be with you'.",
+    "funFact": "The first recorded use of the phrase 'May the Fourth be with you' was in 1979, the day Margaret Thatcher became Prime Minister of the United Kingdom.",
+    "media": "star-wars-day.jpg",
+    "tags": ["pop culture", "movies", "fun"]
+  },
+  {
+    "date": "09-19",
+    "name": "Talk Like a Pirate Day",
+    "description": "A parodic holiday invented in 1995 by John Baur and Mark Summers of Albany, Oregon, U.S., proclaiming September 19 of every year as the day when everyone should talk like a pirate.",
+    "funFact": "The founders chose September 19 because it was the only date during the year that one of them could easily remember.",
+    "media": "talk-like-a-pirate-day.png",
+    "tags": ["humor", "parody", "fun"]
+  },
+  {
+    "date": "11-18",
+    "name": "International Tongue Twister Day",
+    "description": "A day to celebrate the fun and challenge of tongue twisters. It's a great opportunity to try and master some of the trickiest phrases!",
+    "funFact": "The Guinness World Record for the fastest time to recite a difficult tongue twister is held by Fran Capo, who said 'She sells seashells by the seashore' in 7.01 seconds.",
+    "media": "tongue-twister-day.jpg",
+    "tags": ["language", "fun", "games"]
+  }
+  // ... more obscure holidays
+]
