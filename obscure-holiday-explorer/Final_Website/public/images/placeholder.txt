@@ -1,0 +1,16 @@
+This is a placeholder file. 
+
+In a real application, this directory would contain images for each holiday with filenames matching the "media" field in the holidays.json file, such as:
+- global-family-day.jpg
+- nothing-day.jpg
+- ice-cream-breakfast.jpg
+- pi-day.jpg
+- penguin-day.jpg
+- star-wars-day.jpg
+- vegetables-day.jpg
+- emoji-day.jpg
+- cat-day.jpg
+- pirate-talk-day.jpg
+- mental-health-day.jpg
+- tongue-twister-day.jpg
+- mountain-day.jpg
