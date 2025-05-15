@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   import { format, getDaysInMonth, startOfMonth, addDays } from 'date-fns';
   import holidays from '../data/holidays.json';
+
+  const dispatch = createEventDispatcher();
 
   let currentDate = new Date();
   let currentMonth = currentDate.getMonth();
@@ -41,6 +43,15 @@
     generateCalendarDays(currentYear, currentMonth);
   }
 
+  function handleDayClick(day: Date | null) {
+    if (day && holidayMap[format(day, 'MM-dd')]) {
+      const holidayData = holidayMap[format(day, 'MM-dd')];
+      dispatch('navigateToHoliday', holidayData);
+    } else if (day) {
+      console.log('Clicked on:', format(day, 'MM-dd-yyyy'));
+    }
+  }
+
   onMount(() => {
     generateCalendarDays(currentYear, currentMonth);
     holidays.forEach(holiday => {
@@ -70,15 +81,31 @@
     padding: 10px;
     text-align: center;
     border: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  .day:hover:not(.empty) {
+    background-color: #f0f0f0;
   }
 
   .day-header {
     font-weight: bold;
+    cursor: default;
+  }
+
+  .day-header:hover {
+    background-color: transparent;
   }
 
   .empty {
     background-color: #f9f9f9;
     border: none;
+    cursor: default;
+  }
+
+  .holiday {
+    background-color: #ffeeee;
+    font-weight: bold;
   }
 
   .holiday-indicator {
@@ -101,7 +128,12 @@
   {/each}
 
   {#each daysInMonth as day}
-    <div class="day" class:empty={!day}>
+    <div 
+      class="day" 
+      class:empty={!day} 
+      class:holiday={day && holidayMap[format(day, 'MM-dd')]}
+      on:click={() => handleDayClick(day)}
+    >
       {#if day}
         {format(day, 'd')}
         {#if holidayMap[format(day, 'MM-dd')] as holiday}
