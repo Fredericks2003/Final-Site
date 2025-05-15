@@ -1,47 +1,111 @@
-# Svelte + TS + Vite
+# Obscure Holiday Explorer - ICS-200 Final Project
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+An interactive calendar application built with Svelte and TypeScript that showcases unusual and fun holidays throughout the year.
 
-## Recommended IDE Setup
+This project was created as a final project for ICS-200, showcasing various interactive web development techniques and modern frontend patterns.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Project Overview
 
-## Need an official Svelte framework?
+The Obscure Holiday Explorer allows users to discover and learn about unusual holidays throughout the year, through five interactive pages:
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+1. **Home/Calendar** - An interactive calendar showing unusual holidays with tooltips and clickable entries
+2. **Holiday Details** - Detailed information about each holiday with descriptions, fun facts, and themed visuals
+3. **Holiday Randomizer** - An animated wheel that selects random holidays, complete with confetti celebration effects
+4. **Holiday Quiz** - Test your knowledge of obscure holidays with an interactive quiz and scoring system
+5. **Create-A-Holiday** - Design your own obscure holiday with a validated form and live preview
 
-## Technical considerations
+## Technical Features
 
-**Why use this over SvelteKit?**
+- Interactive calendar with month navigation
+- Dynamic holiday highlighting with tooltips
+- Detailed holiday pages with descriptions, fun facts, and dynamically generated themed visuals
+- Tag-based categorization of holidays
+- Animated randomizer with particle effects
+- Interactive quiz with timing, scoring, and badge system
+- Create-A-Holiday form with client-side validation
+- Responsive design for all device sizes
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Project Structure
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+/
+├── public/              # Static assets
+│   └── images/          # Holiday images
+├── src/
+│   ├── components/      # Reusable components
+│   │   └── Calendar.svelte
+│   ├── data/            # Data files
+│   │   └── holidays.json
+│   ├── pages/           # Page components
+│   │   ├── HolidayDetail.svelte
+│   │   ├── RandomHoliday.svelte
+│   │   ├── HolidayQuiz.svelte
+│   │   └── CreateHoliday.svelte
+│   ├── App.svelte       # Main application component
+│   ├── app.css          # Global styles
+│   └── main.ts          # Application entry point
+├── index.html           # HTML entry point
+├── package.json         # Project dependencies
+├── tsconfig.json        # TypeScript configuration
+└── vite.config.ts       # Vite configuration
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Navigate to the project directory
+3. Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+### Development
+
+Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Then open your browser and navigate to `http://localhost:5173`.
+
+### Building for Production
+
+Build the project for production:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+The built files will be in the `dist` directory.
+
+## Adding Holidays
+
+To add new holidays, edit the `src/data/holidays.json` file. Each holiday should have:
+
+- `name`: The name of the holiday
+- `date`: The date in MM-DD format
+- `description`: A description of the holiday
+- `funFact`: An interesting fact about the holiday
+- `media`: Filename of an associated image (stored in public/images)
+- `tags`: Array of categorization tags for the holiday
+
+## Customization
+
+- Change colors in `src/app.css`
+- Modify component styles in the `<style>` section of each Svelte component
+- Add new image assets to the public/images directory

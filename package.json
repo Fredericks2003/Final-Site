@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "animejs": "^4.0.2",
-    "date-fns": "^4.1.0",
-    "svelte-routing": "^2.13.0"
-  }
-}
